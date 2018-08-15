@@ -28,3 +28,6 @@ Route::get('/home', function () {
 
 Route::get('/social/{provider}/login','Auth\SocialController@redirectToProvider')->name("social.login");
 Route::get('/social/{provider}/callback', 'Auth\SocialController@handleProviderCallback');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
