@@ -1,0 +1,2 @@
+//gennerate phpDocs for a model
+php artisan ide-helper:models Post
