@@ -13,4 +13,15 @@
 
 Route::get('/', function () {
     return view('welcome');
+})->name('root');
+
+Route::get('/home', function () {
+    echo 'welcome home ';
+    if(Laratrust::user())
+        echo Laratrust::user()->name;
+    else
+        echo 'guest';
 });
+
+Route::get('/social/{provider}/login','Auth\SocialController@redirectToProvider')->name("social.login");
+Route::get('/social/{provider}/callback', 'Auth\SocialController@handleProviderCallback');
