@@ -17,10 +17,13 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     echo 'welcome home ';
-    if(Laratrust::user())
+    if(Laratrust::user()) {
+        Debugbar::info('logged user access '.Laratrust::user()->name);
         echo Laratrust::user()->name;
-    else
+    }else {
+        Debugbar::warning('Guest user access');
         echo 'guest';
+    }
 });
 
 Route::get('/social/{provider}/login','Auth\SocialController@redirectToProvider')->name("social.login");
