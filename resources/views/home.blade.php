@@ -17,19 +17,18 @@
 
     <script>
         {{----}}
-        console.log('entered');
         window.app = new Vue({
             el: '#app',
             data: {
                 msg: 'hello'
             },
             created(){
-                console.log('vue created');
-                Echo.private('message-channel')
-                    .listen('Message', (e) => {
-                    alert("private message event trigged", e);
-                console.log(e);
-            });
+                //console.log('vue created');
+                //Echo.private('message-channel')
+                //    .listen('Message', (e) => {
+                //    	alert("private message event trigged", e);
+                //	  	console.log(e);
+				//	  });
                 //Echo.channel('broadcast-channel')
                 // .listen('Message', (e) => {
                 //     alert("broadcast channel message event trigged", e);
