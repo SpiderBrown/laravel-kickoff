@@ -110,9 +110,10 @@ return [
     'menu' => [
         'MAIN NAVIGATION',
         [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Dashboard',
+            'url'  => 'home',
+            'can'  => 'access-admin',
+            'role' => 'admin'
         ],
         [
             'text'        => 'Pages',
@@ -121,10 +122,10 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
-        'ACCOUNT SETTINGS',
+        'USERS MANAGEMENT',
         [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
+            'text' => 'Roles',
+            'url'  => 'admin/roles',
             'icon' => 'user',
         ],
         [
