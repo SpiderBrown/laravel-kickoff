@@ -124,9 +124,14 @@ return [
         ],
         'USERS MANAGEMENT',
         [
+            'text' => 'Users',
+            'url'  => 'admin/users',
+            'icon' => 'user',
+        ],
+        [
             'text' => 'Roles',
             'url'  => 'admin/roles',
-            'icon' => 'user',
+            'icon' => 'users',
         ],
         [
             'text' => 'Permissions',
