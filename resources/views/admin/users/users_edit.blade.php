@@ -3,14 +3,7 @@
 
 @extends('adminlte::page')
 
-@section('title', ucfirst($menu) )
-
-@section('content_header')
-    <h1>
-        {{ ucfirst($menu) }} <small>{{ ucfirst($mode) }}</small>
-    </h1>
-    @include('admin.partials.breadcrumb',["mode"=>$mode,"menu"=>$menu])
-@stop
+@include('admin.partials.header')
 
 @section('content')
 

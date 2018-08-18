@@ -1,17 +1,9 @@
+{{! $menu="roles" }}
+{{! $mode="show" }}
 
 @extends('adminlte::page')
 
-@section('title', 'role')
-
-@section('content_header')
-
-    {{! $mode="show" }}
-    {{! $menu="roles" }}
-    <h1>
-        {{ ucfirst($menu) }} <small>{{ ucfirst($mode) }}</small>
-    </h1>
-    @include('admin.partials.breadcrumb',["mode"=>$mode,"menu"=>$menu])
-@stop
+@include('admin.partials.header')
 
 @section('content')
 

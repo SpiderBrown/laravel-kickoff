@@ -7,7 +7,7 @@
 
         <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
             <label>
-            <img src="https://www.shareicon.net/data/2016/05/26/771189_man_512x512.png" class="img-circle img-lg" alt="User Image">
+                <img src="https://www.shareicon.net/data/2016/05/26/771189_man_512x512.png" class="img-circle img-lg" alt="User Image">
             </label>
             <p>{{$user->name}}
                 <span class="hep-block has-success"> <small> - Member since {{$user->created_at->toFormattedDateString()}}</small></span>
@@ -32,6 +32,7 @@
           @endif
       </div>
 
+        @if($mode=='edit')
         <!-- text input -->
         <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
             <label>Password</label>
@@ -44,6 +45,7 @@
                 <span class="help-block">{{ $errors->first('password') }}</span>
             @endif
         </div>
+        @endif
 
     </div>
     <!-- /.col -->

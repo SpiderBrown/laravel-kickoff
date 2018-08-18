@@ -1,18 +1,7 @@
+{{! $menu="permissions" }}
+{{! $mode="create" }}
 
-@extends('adminlte::page')
-
-@section('title', 'Permission')
-
-@section('content_header')
-
-  {{! $mode="add" }}
-  {{! $menu="permissions" }}
-
-  <h1>
-    {{ ucfirst($menu) }} <small>{{ ucfirst($mode) }}</small>
-  </h1>
-  @include('admin.partials.breadcrumb',["mode"=>$mode,"menu"=>$menu])
-@stop
+@include('admin.partials.header')
 
 @section('content')
 

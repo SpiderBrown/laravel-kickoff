@@ -1,17 +1,9 @@
+{{! $menu="roles" }}
+{{! $mode="list" }}
 
 @extends('adminlte::page')
 
-@section('title', 'Role')
-
-@section('content_header')
-  {{! $mode="list" }}
-  {{! $menu="roles" }}
-  <h1>
-    {{ ucfirst($menu) }} <small>{{ ucfirst($mode) }}</small>
-  </h1>
-  @include('admin.partials.breadcrumb',["mode"=>$mode,"menu"=>$menu])
-
-@stop
+@include('admin.partials.header')
 
 @section('content')
 
@@ -31,7 +23,7 @@
                 <tr>
                   <th>SN</th>
                   <th>Name</th>
-                  <th>Display Name</th>
+                  <th>Slug</th>
                   <th>Description</th>
                   <th>Actions</th>
                 </tr>
@@ -41,13 +33,20 @@
                   @foreach($roles as $role)
                   <tr>
                     <td>{{ $loop->index + 1 }}</td>
-                    <td>{{ $role['name'] }}</td>
-                    <td >{{ $role['display_name'] }}</td>
-                    <td>{{ str_limit($role['description'], $limit = 50, $end = '...') }}</td>
                     <td>
-                      <a href="{{ route('roles.show',$role['id']) }}">view</a>
-                      <a href="{{ route('roles.edit',$role['id']) }}">Edit</a>
-{{--                        <a class="btn-danger" href="{{ route('roles.destroy',$role['id']) }}">[x]</a> &nbsp--}}
+                      <strong>
+                        <a class="link-unstyled"  href="{{ route("$menu.show",$role->id) }}">
+                          {{ $role->display_name }}</a>
+                      </strong>
+                    </td>
+                    <td>{{ $role->display_name }}</td>
+                    <td>{{ str_limit($role->description, $limit = 50, $end = '...') }}</td>
+                    <td>
+                      <a class="btn btn-sm btn-primary" href="{{ route("$menu.show",$role->id) }}">
+                        <i class="fa fa-file"></i> view</a>
+                      <a class="btn btn-sm btn-info" href="{{ route("$menu.edit",$role->id) }}">
+                        <i class="fa fa-edit"></i> Edit</a>
+                        {{--<a class="btn-danger" href="{{ route('roles.destroy',$role['id']) }}">[x]</a> &nbsp--}}
                     </td>
                   </tr>  
                   @endforeach
@@ -57,7 +56,7 @@
                 <tr>
                   <th>SN</th>
                   <th>Name</th>
-                  <th>Display Name</th>
+                  <th>Slug</th>
                   <th>Description</th>
                   <th>Actions</th>
                 </tr>

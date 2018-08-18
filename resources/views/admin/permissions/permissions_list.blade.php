@@ -1,17 +1,9 @@
+{{! $menu="permissions" }}
+{{! $mode="list" }}
 
 @extends('adminlte::page')
 
-@section('title', 'Permissions')
-
-@section('content_header')
-  {{! $mode="list" }}
-  {{! $menu="permissions" }}
-  <h1>
-    {{ ucfirst($menu) }} <small>{{ ucfirst($mode) }}</small>
-  </h1>
-  @include('admin.partials.breadcrumb',["mode"=>$mode,"menu"=>$menu])
-
-@stop
+@include('admin.partials.header')
 
 @section('content')
 
@@ -43,18 +35,18 @@
                     <td>{{ $loop->index + 1 }}</td>
                     <td>
                       <strong>
-                        <a class="link-unstyled"  href="{{ route("$menu.show",$permission['id']) }}">
-                          {{ $permission['display_name'] }}</a>
+                        <a class="link-unstyled"  href="{{ route("$menu.show",$permission->id) }}">
+                          {{ $permission->display_name }}</a>
                       </strong>
                     </td>
-                    <td>{{ $permission['name'] }}</td>
-                    <td>{{ str_limit($permission['description'], $limit = 50, $end = '...') }}</td>
+                    <td>{{ $permission->name }}</td>
+                    <td>{{ str_limit($permission->description, $limit = 50, $end = '...') }}</td>
                     <td>
-                      <a class="btn btn-sm btn-info" href="{{ route("$menu.show",$permission['id']) }}">
+                      <a class="btn btn-sm btn-primary" href="{{ route("$menu.show",$permission->id) }}">
                         <i class="fa fa-file"></i> view</a>
-                      <a class="btn btn-sm btn-warning" href="{{ route("$menu.edit",$permission['id']) }}">
+                      <a class="btn btn-sm btn-info" href="{{ route("$menu.edit",$permission->id) }}">
                         <i class="fa fa-edit"></i> Edit</a>
-                      {{--<a class="btn btn-sm btn-danger" href="{{ route('permissions.destroy',$permission['id']) }}">--}}
+                      {{--<a class="btn btn-sm btn-danger" href="{{ route('permissions.destroy',$permission->id) }}">--}}
                         {{--<i class="fa fa-bin"></i> Delete</a></a>--}}
                     </td>
                   </tr>  
