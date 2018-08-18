@@ -226,23 +226,23 @@
 
                         @if (session('success'))
                             <div class="alert alert-success alert-dismissible show">
-                                {{ session('success') }}
+                                {!!  session('success') !!}
                             </div>
                         @endif
                         @if(session('info'))
                             <div class="alert alert-info alert-dismissible">
-                                {{ session('info') }}
+                                {!! session('info') !!}
                             </div>
                         @endif
                         @if(session('warning'))
                             <div class="alert alert-warning alert-dismissible ">
-                                {{ session('warning') }}
+                                {!! session('warning') !!}
                             </div>
                         @endif
 
                         @if(session('danger'))
                             <div class="alert alert-danger alert-dismissible show">
-                                {{ session('danger') }}
+                                {!! session('danger') !!}
                             </div>
                         @endif
 
