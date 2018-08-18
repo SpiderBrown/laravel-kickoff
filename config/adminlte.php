@@ -129,8 +129,8 @@ return [
             'icon' => 'user',
         ],
         [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
+            'text' => 'Permissions',
+            'url'  => 'admin/permissions',
             'icon' => 'lock',
         ],
         [

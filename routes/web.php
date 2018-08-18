@@ -32,4 +32,14 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/{id}', 'Admin\RoleController@update')->name("roles.update"); //update
         Route::get('/{id}/delete', 'Admin\RoleController@destroy')->name("roles.destroy"); //delete
     });
+
+    Route::group(['prefix' => 'permissions', 'middleware' => ['role:superadministrator|administrator']], function () {
+        Route::get('/', 'Admin\PermissionController@index')->name("permissions.index");
+        Route::get('/create', 'Admin\PermissionController@create')->name("permissions.create");
+        Route::post('/', 'Admin\PermissionController@store')->name("permissions.store");
+        Route::get('/{id}', 'Admin\PermissionController@show')->name("permissions.show");
+        Route::get('/{id}/edit', 'Admin\PermissionController@edit')->name("permissions.edit");
+        Route::post('/{id}', 'Admin\PermissionController@update')->name("permissions.update");
+        Route::get('/{id}/delete', 'Admin\PermissionController@destroy')->name("permissions.destroy");
+    });
 });
