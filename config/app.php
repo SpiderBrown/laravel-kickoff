@@ -150,7 +150,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Barryvdh\Debugbar\ServiceProvider::class,
+        Emadadly\LaravelUuid\LaravelUuidServiceProvider::class,
 
         /*
          * Application Service Providers...

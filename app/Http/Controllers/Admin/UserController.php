@@ -71,7 +71,6 @@ class UserController extends Controller
 
 
         $user = User::create([
-            'uuid' => str_random(16),
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'active' => $request->input('active')?true:false,
