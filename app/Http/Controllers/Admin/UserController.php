@@ -91,7 +91,7 @@ class UserController extends Controller
         }
 
 
-        $withPassword=define($auto_password)?'with Auto Password <strong>'.$auto_password.'</strong>':'';
+        $withPassword=defined($auto_password)?'with Auto Password <strong>'.$auto_password.'</strong>':'';
 
 
         return redirect()->route('users.index')
