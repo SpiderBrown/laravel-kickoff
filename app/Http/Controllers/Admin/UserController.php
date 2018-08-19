@@ -57,6 +57,7 @@ class UserController extends Controller
     {
         //
 
+        $auto_password=false;
         if($request->has('auto_password'))
             $password = $auto_password = str_random(6);
         else
@@ -91,7 +92,7 @@ class UserController extends Controller
         }
 
 
-        $withPassword=defined($auto_password)?'with Auto Password <strong>'.$auto_password.'</strong>':'';
+        $withPassword=($auto_password)?'with Auto Password <strong>'.$auto_password.'</strong>':'';
 
 
         return redirect()->route('users.index')
