@@ -239,7 +239,6 @@
                                 {!! session('warning') !!}
                             </div>
                         @endif
-
                         @if(session('danger'))
                             <div class="alert alert-danger alert-dismissible show">
                                 {!! session('danger') !!}
