@@ -58,6 +58,6 @@ Route::group(['prefix' => 'admin'], function() {
 Route::get('/notify', function () {
     $user=Auth::user();
     echo $user->name;
-
-    return $user->notify(new \App\Notifications\WelcomeMessage('welcome'));
+    echo $user->UnreadNotifications->groupBy('type')->count();
+    return $user->notify(new \App\Notifications\WelcomeMessage());
 });

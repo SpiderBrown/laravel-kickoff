@@ -42,9 +42,9 @@ class WelcomeMessage extends Notification
     {
         $data=[
             'type'=>'welcome',
-            'title'=>'Hi '.$notifiable->name.', Welcome to '.config('name'),
+            'title'=>'Welcome '.$notifiable->name,
             'message'=>'Welcome to '.config('name').' you may first like to update your Profile.',
-            'url'=>'/profile'
+            'url'=>'/admin/welcome'
         ];
 
         return [
