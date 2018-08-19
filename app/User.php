@@ -54,4 +54,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function boot() {
+        static::created(function(User $user) {
+            $user->notify(new \App\Notifications\WelcomeMessage());
+        });
+
+        parent::boot();
+    }
 }
