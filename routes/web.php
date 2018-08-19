@@ -52,3 +52,12 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/{id}/delete', 'Admin\UserController@destroy')->name("users.destroy");
     });
 });
+
+
+
+Route::get('/notify', function () {
+    $user=Auth::user();
+    echo $user->name;
+
+    return $user->notify(new \App\Notifications\WelcomeMessage('welcome'));
+});

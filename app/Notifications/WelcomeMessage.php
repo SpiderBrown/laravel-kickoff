@@ -33,29 +33,22 @@ class WelcomeMessage extends Notification
     }
 
     /**
-     * Get the mail representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
-     */
-    public function toMail($notifiable)
-    {
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
-    }
-
-    /**
      * Get the array representation of the notification.
      *
      * @param  mixed  $notifiable
      * @return array
      */
-    public function toArray($notifiable)
+    public function toDatabase($notifiable)
     {
+        $data=[
+            'type'=>'welcome',
+            'title'=>'Hi '.$notifiable->name.', Welcome to '.config('name'),
+            'message'=>'Welcome to '.config('name').' you may first like to update your Profile.',
+            'url'=>'/profile'
+        ];
+
         return [
-            //
+            $data
         ];
     }
 }
