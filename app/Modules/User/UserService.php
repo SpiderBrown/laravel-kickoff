@@ -10,6 +10,7 @@ namespace App\Modules\User;
 
 
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
@@ -26,8 +27,7 @@ class UserService
 
     public function storeUser($user){
         $this->user=$user;
-        $this->user->uuid       = str_random(16);
-        $this->user->password   = bcrypt($user->password);
+        $this->user->password   = Hash::make($user->password);
         $this->user->save();
     }
 }
