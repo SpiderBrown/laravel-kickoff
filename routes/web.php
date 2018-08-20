@@ -51,7 +51,9 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/{id}', 'Admin\UserController@update')->name("users.update");
         Route::get('/{id}/delete', 'Admin\UserController@destroy')->name("users.destroy");
     });
-});
+    Route::group(['prefix' => 'timeline', 'middleware' => ['role:superadministrator|administrator']], function () {
+        Route::get('/', 'Admin\TimelineController@index')->name('timeline.index');
+    });
 
 
 
