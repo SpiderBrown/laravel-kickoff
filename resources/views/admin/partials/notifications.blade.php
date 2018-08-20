@@ -10,38 +10,21 @@
             <!-- inner menu: contains the actual data -->
             <ul class="menu">
                 @foreach($uNotifications as $notification)
-                    @if($notification->type=='App\Notifications\WelcomeMessage')
-                    <li>
-                        <a href="{{$notification->data['url']}}">
-                            <i class="fa fa-users text-aqua"></i> {{$notification->data['title']}}
-                            {{$notification->data['message']}}
-                        </a>
-                    </li>
-                    @endif
+                        <li>
+                            <a href="{{route('timeline.index')}}">
+                                <i class="fa {{!empty($notification->data['icon'])?$notification->data['icon']:'fa fa-circle-o bg-blue'}}"></i>
+                                {{ $notification->data['title']}}
+                            </a>
+                        </li>
+
                 @endforeach
                 <li>
-                    <a href="#">
-                        <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                        page and may cause design problems
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-users text-red"></i> 5 new members joined
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-user text-red"></i> You changed your username
+                    <a href="{{route('timeline.index')}}">
+                        <i class="fa fa-user text-red"></i> Your account is ready
                     </a>
                 </li>
             </ul>
         </li>
-        <li class="footer"><a href="#">View all</a></li>
+        <li class="footer"><a href="{{route('timeline.index')}}">View all</a></li>
     </ul>
 </li>

@@ -51,15 +51,12 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/{id}', 'Admin\UserController@update')->name("users.update");
         Route::get('/{id}/delete', 'Admin\UserController@destroy')->name("users.destroy");
     });
+
     Route::group(['prefix' => 'timeline', 'middleware' => ['role:superadministrator|administrator']], function () {
         Route::get('/', 'Admin\TimelineController@index')->name('timeline.index');
+        Route::get('/add', 'Admin\TimelineController@add')->name('timeline.add');
+        Route::get('/{type}', 'Admin\TimelineController@type')->name('timeline.type');
     });
 
 
-
-Route::get('/notify', function () {
-    $user=Auth::user();
-    echo $user->name;
-    echo $user->UnreadNotifications->groupBy('type')->count();
-    return $user->notify(new \App\Notifications\WelcomeMessage());
 });

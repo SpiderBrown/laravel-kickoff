@@ -116,9 +116,9 @@ return [
             'role' => 'admin'
         ],
         [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'file',
+            'text'        => 'Timeline',
+            'url'         => 'admin/timeline',
+            'icon'        => 'history',
             'label'       => 4,
             'label_color' => 'success',
         ],
