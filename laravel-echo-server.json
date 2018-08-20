@@ -5,6 +5,10 @@
 		{
 			"appId": "9a1283c578e84a1d",
 			"key": "a40561a57f53792ef263353fce932888"
+		},
+		{
+			"appId": "Spider02",
+			"key": "c47a70ffaf9bbaa6b180782c648e656d"
 		}
 	],
 	"database": "redis",
