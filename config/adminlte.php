@@ -122,6 +122,13 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
+        [
+            'text'        => 'Chat',
+            'url'         => 'admin/chat',
+            'icon'        => 'comments',
+            'label'       => 4,
+            'label_color' => 'warning',
+        ],
         'USERS MANAGEMENT',
         [
             'text' => 'Users',

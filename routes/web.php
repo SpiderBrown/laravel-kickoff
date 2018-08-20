@@ -64,5 +64,12 @@ Route::group(['prefix' => 'admin'], function() {
         })->name('pages');
     });
 
+    Route::group(['prefix' => 'chat', 'middleware' => ['auth']], function () {
+        Route::get('/', 'Admin\ChatController@index')->name("chat");
+        Route::get('/{{message}}', function($message){
+            return new \App\Notifications\AdminBroadcastMessage($message);
+        })->name("broadcast");
+    });
+
 
 });
