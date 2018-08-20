@@ -58,5 +58,11 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/{type}', 'Admin\TimelineController@type')->name('timeline.type');
     });
 
+    Route::group(['prefix' => 'pages', 'middleware' => ['auth']], function () {
+        Route::get('/{page}', function($page){
+            return view('admin.pages.'.$page);
+        })->name('pages');
+    });
+
 
 });

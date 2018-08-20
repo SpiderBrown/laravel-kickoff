@@ -139,40 +139,23 @@ return [
             'icon' => 'lock',
         ],
         [
-            'text'    => 'Multilevel',
+            'text'    => 'Pages',
             'icon'    => 'share',
             'submenu' => [
                 [
-                    'text' => 'Level One',
-                    'url'  => '#',
+                    'text' => 'Simple Page',
+                    'url'  => 'admin/pages/simple',
+                    'icon'    => 'file',
                 ],
                 [
-                    'text'    => 'Level One',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Level Two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text'    => 'Wekan-Glo',
+                    'url'     => 'https://app.gitkraken.com/glo/board/W3lKICfEfw4AXyIQ',
+                    'icon'    => 'bug',
                 ],
                 [
-                    'text' => 'Level One',
-                    'url'  => '#',
+                    'text'    => 'GitHub',
+                    'url'     => 'https://github.com/SpiderBrown/laravel-kickoff',
+                    'icon'    => 'git',
                 ],
             ],
         ],
