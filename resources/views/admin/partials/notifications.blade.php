@@ -9,16 +9,14 @@
         <li>
             <!-- inner menu: contains the actual data -->
             <ul class="menu">
-                @foreach($uNotifications->toArray() as $notification)
-                    @if($notification['type']=='App\Notifications\WelcomeMessage')
-                        @foreach($notification['data'] as $key=>$data)
-                            <li>
-                                <a href="{{$data['url']}}">
-                                    <i class="fa fa-users text-aqua"></i> {{$data['title']}}
-                                    {{--{{$data['message']}}--}}
-                                </a>
-                            </li>
-                        @endforeach
+                @foreach($uNotifications as $notification)
+                    @if($notification->type=='App\Notifications\WelcomeMessage')
+                    <li>
+                        <a href="{{$notification->data['url']}}">
+                            <i class="fa fa-users text-aqua"></i> {{$notification->data['title']}}
+                            {{$notification->data['message']}}
+                        </a>
+                    </li>
                     @endif
                 @endforeach
                 <li>

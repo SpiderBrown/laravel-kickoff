@@ -40,15 +40,12 @@ class WelcomeMessage extends Notification
      */
     public function toDatabase($notifiable)
     {
-        $data=[
+        return [
             'type'=>'welcome',
             'title'=>'Welcome '.$notifiable->name,
-            'message'=>'Welcome to '.config('name').' you may first like to update your Profile.',
+            'title_info'=>'Your Account is Ready',
+            'message'=>'Welcome to '.config('app.name').' you may first like to update your Profile.',
             'url'=>'/admin/welcome'
-        ];
-
-        return [
-            $data
         ];
     }
 }
