@@ -57,6 +57,13 @@
                                 <div class="navbar-custom-menu">
 
                                     <ul class="nav navbar-nav">
+                                        <!-- Chat Message: style can be found in dropdown.less -->
+                                        <li class="dropdown notifications-menu">
+                                            <a href="{{route('chat')}}" class="dropdown-toggle">
+                                                <i class="fa fa-comment"></i>
+                                                <span class="label label-warning" id="msgCount">0</span>
+                                            </a>
+                                        </li>
                                         @include('admin.partials.notifications',['uNotifications'=>Laratrust::user()->unreadNotifications])
                                         <!-- User Account: style can be found in dropdown.less -->
                                         <li class="dropdown user user-menu">

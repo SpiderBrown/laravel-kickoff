@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Events\AdminBroadcastMessage;
+use App\Events\AdminPrivateMessage;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -24,5 +25,15 @@ class MessageController extends Controller
 
         event(new AdminBroadcastMessage($message));
         echo 'sent';
+    }
+    public function sendPrivate($id)
+    {
+        $user=User::find($id);
+        $message=[
+            'message' => "Hello ".$user->name.", Lets have a coffee.",
+        ];
+
+        event(new AdminPrivateMessage($message,$user));
+        echo 'sent private';
     }
 }

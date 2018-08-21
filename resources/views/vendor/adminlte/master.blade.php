@@ -73,6 +73,12 @@
             console.log(e.message);
             window.alert(e.message.message);
         });
+    Echo.private (`App.User.{{Auth::user()->id}}`)
+        .listen('AdminPrivateMessage', (e) => {
+            console.log(e.message);
+            var c=$('#msgCount').text();
+            $('#msgCount').text(parseInt(c)+1);
+        });
 </script>
 @endauth
 @yield('adminlte_js')
