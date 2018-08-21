@@ -65,7 +65,16 @@
 @endif
 
 <script src="{{ asset('js/app.js') }}" charset="utf-8"></script>
+@auth
+<script>
 
+    window.Echo.channel('admin.message')
+        .listen('AdminBroadcastMessage', (e) => {
+            console.log(e.message);
+            window.alert(e.message.message);
+        });
+</script>
+@endauth
 @yield('adminlte_js')
 
 </body>
