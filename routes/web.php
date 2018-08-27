@@ -67,7 +67,8 @@ Route::group(['prefix' => 'admin'], function() {
     Route::group(['prefix' => 'chat', 'middleware' => ['auth']], function () {
         Route::get('/', 'Admin\MessageController@index')->name("chat");
         Route::get('/send', 'Admin\MessageController@sendBroadcast');
-        Route::get('/send/{id}', 'Admin\MessageController@sendPrivate');
+        Route::post('/send/{id}', 'Admin\MessageController@sendPrivatePost');
+        Route::get('/messages/{id}', 'Admin\MessageController@messages');
     });
 
 
