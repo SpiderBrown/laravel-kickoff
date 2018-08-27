@@ -17755,16 +17755,10 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
     host: window.location.hostname + ':6001'
 });
 
-var socket = io('http://localhost:6001');
-socket.on('connect', function () {
-    console.log('socket.io.connected');
-});
-socket.on('event', function (data) {
-    console.log('socket-event', data);
-});
-socket.on('disconnect', function () {
-    condole.log('socket-disconnectd');
-});
+// var socket = io('http://localhost:6001');
+// socket.on('connect', function(){console.log('socket.io.connected');});
+// socket.on('event', function(data){console.log('socket-event',data);});
+// socket.on('disconnect', function(){condole.log('socket-disconnectd');});
 
 /***/ }),
 /* 41 */

@@ -79,6 +79,20 @@
             var c=$('#msgCount').text();
             $('#msgCount').text(parseInt(c)+1);
         });
+
+//        Echo.join('chat')
+//            .joining((user) => {
+//                axios.put('/api/user/'+ user.id +'/online, {});
+//            })
+//            .leaving((user) => {
+//                axios.put('/api/user/'+ user.id +'/offline, {});
+//            })
+//            .listen('UserOnline', (e) => {
+//                this.friend = e.user;
+//            })
+//            .listen('UserOffline', (e) => {
+//                this.friend = e.user;
+//            });
 </script>
 @endauth
 @yield('adminlte_js')
