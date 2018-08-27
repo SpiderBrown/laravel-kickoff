@@ -190,7 +190,7 @@
                    axios.post('/admin/chat/send/'+this.selectedUserId,{message: this.msg,sender_id: this.my_id,reciever_id: this.selectedUserId }).then((response) => {
                        console.log(response);
                        var msg=response.data;
-                       this.messages.push({sender:{name:'Ali',avatar:'avt'},message:msg.body,timestamp:msg.created_at,sender_id:msg.sender_id});
+                       this.messages.push({sender:{name:`{{Auth::user()->name}}`,avatar:`{{Auth::user()->avatar}}`},message:msg.body,timestamp:msg.created_at,sender_id:msg.sender_id});
                    })
                    .then(function (response) {
                        console.log(response);
