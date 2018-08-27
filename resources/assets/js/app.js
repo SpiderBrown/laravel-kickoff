@@ -17,6 +17,11 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-// const app = new Vue({
-//     el: '#app'
-// });
+import Chat from 'vue-beautiful-chat'
+Vue.use(Chat)
+
+Vue.component('chat', require('./components/vue-beautiful-chat.vue'));
+
+const app = new Vue({
+    el: '#app-master'
+});
