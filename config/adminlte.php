@@ -164,6 +164,11 @@ return [
                     'url'     => 'https://github.com/SpiderBrown/laravel-kickoff',
                     'icon'    => 'git',
                 ],
+                [
+                    'text'    => 'Test Module',
+                    'url'     => 'testmodule',
+                    'icon'    => 'cube',
+                ],
             ],
         ],
         'LABELS',
