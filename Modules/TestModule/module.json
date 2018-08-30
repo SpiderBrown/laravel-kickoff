@@ -1,0 +1,16 @@
+{
+    "name": "TestModule",
+    "alias": "testmodule",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\TestModule\\Providers\\TestModuleServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}
