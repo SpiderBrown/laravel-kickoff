@@ -2,3 +2,6 @@
 php artisan ide-helper:models "API\User"
 
 // also for multi  //php artisan ide-helper:models --dir="path/to/models" --dir="app/src/Model" --ignore="Post"
+
+//create new module
+php artisan module:make Blog
